@@ -1,5 +1,6 @@
-const { resolve } = require('path');
+const {resolve} = require('path');
 const webpack = require('webpack');
+const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -39,5 +40,9 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin(),
+        new htmlWebpackPlugin({
+            title: 'Hello World',
+            template: 'index.html'
+        }),
     ],
 };
